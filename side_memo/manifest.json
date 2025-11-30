@@ -1,0 +1,35 @@
+{
+  "name": "Side Memo",
+  "description": "右サイドパネルに開く一時メモ帳",
+  "version": "1.0.4",
+  "manifest_version": 3,
+
+  /* ── ツールバーアイコン ─────────────────────── */
+  "action": {
+    "default_title": "メモを開く"
+  },
+
+  /* ── サイドパネルで表示する HTML ─────────────── */
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+
+  /* ── Service Worker（拡張機能のバックグラウンド） ─ */
+  "background": {
+    "service_worker": "bg.js",
+    "type": "module"
+  },
+
+  /* ── 必要な権限 ─────────────────────────────── */
+  "permissions": [
+    "storage",      // メモ内容を保存
+    "sidePanel"     // SidePanel API を使用
+  ],
+
+  /* ── 拡張機能一覧やツールバーで使われるアイコン ─ */
+  "icons": {
+    "16":  "icon16.png",
+    "32":  "icon32.png",
+    "48":  "icon48.png"
+  }
+}
